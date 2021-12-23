@@ -17,6 +17,7 @@ public class lesson_2 {
         boolean aLessOrEqualThenB = a<=b;
 
 
+        // Порядок вывода результатов при компиляции отличается от урока №2
 
         if(aGreaterThenB){
             System.out.println("a>b");
