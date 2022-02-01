@@ -12,7 +12,7 @@ public class GameGuessNumber {
         System.out.println("Я загадал случайное число от 1 до " + rangeOfRandom);
 
         for (int i = 1; i <= numbOfAttempts; i++) {
-            System.out.println("Попытка № +" + i);
+            System.out.println("Попытка №" + i);
             int userInput = new Scanner(System.in).nextInt();
             if (userInput < mathRandomNumber) {
                 System.out.println("Введенное число меньше загаданого");
