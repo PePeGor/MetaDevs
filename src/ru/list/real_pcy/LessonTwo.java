@@ -36,7 +36,7 @@ public class LessonTwo {
             System.out.println("False");
         }
 
-        int userInput = new Scanner(System.in).nextInt();
+        int userInput = intScanner();
         if (userInput % 2 == 0) {
             System.out.println("Число чётное");
         } else {
@@ -54,5 +54,14 @@ public class LessonTwo {
 
     static int multiply(int x, int y) {
         return x * y;
+    }
+
+    private static int intScanner() {
+        Scanner userInput = new Scanner(System.in);
+        while (!userInput.hasNextInt()) {
+            System.out.println("Неверный ввод, повторите попытку: ");
+            userInput.next();
+        }
+        return userInput.nextInt();
     }
 }
