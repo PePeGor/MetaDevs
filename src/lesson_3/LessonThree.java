@@ -18,6 +18,8 @@ public class LessonThree {
             default:
                 System.out.println("Число не равно 1, 8, 9");
         }
+
+
         if (num == 1) {
             System.out.println("Число равно 1");
         } else if (num == 8) {
@@ -25,9 +27,12 @@ public class LessonThree {
         } else {
             System.out.println("Число не равно 1, 8, 9");
         }
-        comparisonsOperators(1);
-        loops(2);
-        magic(1);
+
+        negativeComp(1);
+        lightweightCycle(2);
+        easyOperators(1);
+        positiveComparisons(1);
+
         //Подсчёт количества високосных годов
         int year = 85;
         while (year >= 0) {
@@ -38,18 +43,23 @@ public class LessonThree {
         }
     }
 
-    public static void comparisonsOperators(int num) {
+    public static void negativeComp(int num) {
         if (num != 8 && num != 1 && num != 9) {
             System.out.println("Число не равно 1, 8, 9");
-        } else System.out.println("Число равно 1, 8, 9");
-        if (num == 0 || num == 1) {
+        } else {
+            System.out.println("Число равно 1, 8, 9");
+        }
+    }
+
+    public static void positiveComparisons(int boom) {
+        if (boom == 0 || boom == 1) {
             System.out.println("Число равно 1 или 0");
         } else {
             System.out.println("Число не равно ни 1, ни 0");
         }
     }
 
-    public static void loops(int i) {
+    public static void lightweightCycle(int i) {
         int counter = 1;
         while (counter < 100) {
             counter++;
@@ -57,7 +67,7 @@ public class LessonThree {
         }
     }
 
-    public static int magic(int x) {
+    public static int easyOperators(int x) {
         if (x == 10) {
             return 1;
         } else {
@@ -65,3 +75,4 @@ public class LessonThree {
         }
     }
 }
+
