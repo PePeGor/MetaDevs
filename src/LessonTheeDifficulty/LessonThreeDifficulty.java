@@ -30,14 +30,13 @@ public class LessonThreeDifficulty {
         number = scan.nextInt();
         System.out.print("Enter the i: ");
         i = scan.nextInt();
-        while (number < i) {
-            if (number < i) {
-                System.out.println("number is less then i");
-            } else {
+         if (number < i) {
+             while (number < i) {
+                 System.out.println("number is less then i");
+             }
+         } else
                 System.out.println("number is greater the i");
-            }
             number++;
-        }
 
         System.out.println("\nЗадача 3.3\n");
 
