@@ -28,9 +28,9 @@ public class LessonThree {
             System.out.println("Число не равно 1, 8, 9");
         }
 
-        negativeComp(1);
+        negativeComparisons(1);
         lightweightCycle(2);
-        easyOperators(1);
+        isNumberEqualsTen(1);
         positiveComparisons(1);
 
         //Подсчёт количества високосных годов
@@ -43,7 +43,7 @@ public class LessonThree {
         }
     }
 
-    public static void negativeComp(int num) {
+    public static void negativeComparisons(int num) {
         if (num != 8 && num != 1 && num != 9) {
             System.out.println("Число не равно 1, 8, 9");
         } else {
@@ -67,7 +67,7 @@ public class LessonThree {
         }
     }
 
-    public static int easyOperators(int x) {
+    public static int isNumberEqualsTen(int x) {
         if (x == 10) {
             return 1;
         } else {
