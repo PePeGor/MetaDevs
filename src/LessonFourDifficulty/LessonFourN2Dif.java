@@ -15,8 +15,8 @@ public class LessonFourN2Dif {
     }
 
     public static void foundEvenNumbers(int firstNumber, int endNumber) {
-        for (int desireNumb = firstNumber; desireNumb <= endNumber; desireNumb++) {
-            if (desireNumb % 2 == 0 && desireNumb != firstNumber && desireNumb !=endNumber)
+        for (int desireNumb = firstNumber+1; desireNumb <endNumber; desireNumb++) {
+           if (desireNumb % 2 == 0)
                 System.out.println(desireNumb);
         }
     }
