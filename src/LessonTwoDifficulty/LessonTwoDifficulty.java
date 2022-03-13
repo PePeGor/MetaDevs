@@ -18,7 +18,7 @@ public class LessonTwoDifficulty {
         } else {
             System.out.println("Число меньше 10");
         }
-        System.out.println(" ");
+        System.out.println();
 
         firstMethod();
         secondMethod();
@@ -49,8 +49,7 @@ public class LessonTwoDifficulty {
         boolean statement2 = value1 < value2;
         if (statement1) {
             System.out.println("Первое число больше второго");
-        }
-        if (statement2) {
+        } else if (statement2) {
             System.out.println("Первое число меньше второго");
         } else {
             System.out.println("Числа равны");
