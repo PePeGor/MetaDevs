@@ -1,7 +1,6 @@
 package LessonTheeDifficulty;
 
 import java.util.Scanner;
-import java.lang.String;
 
 public class LessonThreeDifficulty {
     public static void main(String[] args) {
@@ -11,18 +10,28 @@ public class LessonThreeDifficulty {
         System.out.println("Введите номер месяца чтобы опредилить принадлежность к сезону");
         Scanner scan = new Scanner(System.in);
         month = scan.nextInt();
-        if (month == 1 || month == 2 || month == 12) {
-            System.out.println("Это месяц зимы");
-        } else if (month == 3 || month == 4 || month == 5) {
-            System.out.println("Это месяц весны");
-        } else if (month == 6 || month == 7 || month == 8) {
-            System.out.println("Это месяц лета");
-        } else if (month == 9 || month == 10 || month == 11) {
-            System.out.println("Это месяц осени");
-        } else {
-            System.out.println("Месяц из неизвестного времени года");
+        switch (month) {
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("This is winter");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("This is spring");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("This is summer");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("This is autumn");
+                break;
         }
-
         System.out.println("\nЗадача 3.2\n");
 
         int number, i;
@@ -30,33 +39,61 @@ public class LessonThreeDifficulty {
         number = scan.nextInt();
         System.out.print("Enter the i: ");
         i = scan.nextInt();
-         if (number < i) {
-             while (number < i) {
-                 System.out.println("number is less then i");
-             }
-         } else
-                System.out.println("number is greater the i");
-            number++;
+        if (number < i) {
+            while (number < i) {
+                System.out.println("number is less then i");
+                number++;
+            }
+        } else {
+            System.out.println("number is greater or equals i");
+        }
 
         System.out.println("\nЗадача 3.3\n");
+        int a;
 
-        int choiceNumbers = numberFromTheList();
-        int resultOfMatch;
-        String anotherResult;
-        resultOfMatch = ((choiceNumbers == 0 || choiceNumbers == 2) ? choiceNumbers + 7 : choiceNumbers / 10);
-        System.out.println(resultOfMatch);
-        resultOfMatch = ((choiceNumbers == -3 || choiceNumbers == 5) ? choiceNumbers + 7 : choiceNumbers / 10);
-        System.out.println(resultOfMatch);
+        a = 5;
+        System.out.println("Compare the variable a = " + a + " with numbers from method");
+        System.out.println(additionAndDivisionMethod(a));
+        timerForPrintMethods();
+        System.out.println(trueOfElseMethod(a));
+        timerForPrintMethods();
 
-        anotherResult = (choiceNumbers > 0 && choiceNumbers < 5) ? "Верно" : "Неверно";
-        System.out.println(anotherResult);
+        a = 0;
+        System.out.println("Compare the variable a = " + a + " with numbers from method");
+        System.out.println(additionAndDivisionMethod(a));
+        timerForPrintMethods();
+        System.out.println(trueOfElseMethod(a));
+        timerForPrintMethods();
+
+        a = -3;
+        System.out.println("Compare the variable a = " + a + " with numbers from method");
+        System.out.println(additionAndDivisionMethod(a));
+        timerForPrintMethods();
+        System.out.println(trueOfElseMethod(a));
+        timerForPrintMethods();
+
+        a = 2;
+        System.out.println("Compare the variable a = " + a + " with numbers from method");
+        System.out.println(additionAndDivisionMethod(a));
+        timerForPrintMethods();
+        System.out.println(trueOfElseMethod(a));
 
     }
 
-    public static int numberFromTheList() {
-        int[] a = new int[]{5, 0, -3, 2};
-        int rnd = (int) Math.floor(Math.random() * a.length);
-        return rnd;
+    public static void timerForPrintMethods() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String additionAndDivisionMethod(int a) {
+        return (a == 0 || a == 2) ? String.valueOf(a + 7) : String.valueOf((double) a / 10);
+    }
+
+    public static String trueOfElseMethod(int a) {
+        return a > 0 && a < 5 ? "Верно" : "Неверно";
     }
 }
 
