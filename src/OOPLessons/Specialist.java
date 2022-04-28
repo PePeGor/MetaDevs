@@ -1,11 +1,21 @@
 package OOPLessons;
 
-class Specialist {
+public class Specialist {
 
     String nameOfPerson;
     int salary;
     int ageOfPerson;
     String workingCompany;
+
+    public Specialist(String nameOfPerson, int ageOfPerson, int salary) {
+        this.nameOfPerson = nameOfPerson;
+        this.ageOfPerson = ageOfPerson;
+        this.salary = salary;
+    }
+
+    public Specialist() {
+
+    }
 
 
     //region getters/setters
@@ -52,4 +62,5 @@ class Specialist {
             throw new Exception("Incorrect data");
         }
     }
+
 }

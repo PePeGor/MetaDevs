@@ -14,6 +14,10 @@ public class HumanWorker {
         System.out.println(chaptMaster.getNameOfPerson());
         System.out.println(Specialist.salaryComparAge(31, 30000));
         Specialist.salaryValidate();
+
+        Company companyManagment = new Company();
+
+        System.out.println(companyManagment.addNewWorker("Keka", 33, 2000));
     }
 
     
