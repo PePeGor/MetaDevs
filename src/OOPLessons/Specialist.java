@@ -2,19 +2,15 @@ package OOPLessons;
 
 public class Specialist {
 
-    String nameOfPerson;
-    int salary;
-    int ageOfPerson;
-    String workingCompany;
+   private String nameOfPerson;
+   private int salary;
+   private int ageOfPerson;
+   private String workingCompany;
 
     public Specialist(String nameOfPerson, int ageOfPerson, int salary) {
         this.nameOfPerson = nameOfPerson;
         this.ageOfPerson = ageOfPerson;
         this.salary = salary;
-    }
-
-    public Specialist() {
-
     }
 
 
@@ -63,4 +59,13 @@ public class Specialist {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Specialist{" +
+                "nameOfPerson='" + nameOfPerson + '\'' +
+                ", salary=" + salary +
+                ", ageOfPerson=" + ageOfPerson +
+                ", workingCompany='" + workingCompany + '\'' +
+                '}';
+    }
 }
