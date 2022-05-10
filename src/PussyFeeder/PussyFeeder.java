@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class PussyFeeder {
     static String[] cats = new String[]{"Персик", "Пертурабо", "Кека", "Пыжик"};
-    static int[] catsFood = new int[]{1, 3, 5, 0, 2};
+    static int[] catsFood = new int[]{1, 3, 5, 0};
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-
 
         int userInput;
         do {
@@ -30,11 +29,11 @@ public class PussyFeeder {
                 case 4:
                     foodForEvenOddCats();
                     break;
+                default:
+                    System.out.println("Выберите номера операции");
             }
         } while (userInput != 666);
-
     }
-
 
     public static void seeCatsAndFood() {
         for (int i = 0; i < cats.length; i++) {
@@ -44,7 +43,7 @@ public class PussyFeeder {
 
     public static void printMenu() {
         System.out.println("Выберите что вы хотите сделать: ");
-        System.out.println("1 - Добавить еды у конкретному  коту: ");
+        System.out.println("1 - Добавить еды конкретному  коту: ");
         System.out.println("2 - Убавить еды у конкретного кота: ");
         System.out.println("3 - Добавить/убавить еды у всех котов сразу: ");
         System.out.println("4 - Добавить/убавить еды у четныъ/нечетных котов: ");
@@ -93,21 +92,23 @@ public class PussyFeeder {
         System.out.println("2. Изменить количество еды у чётных.");
         int evenUnevenCats = sc.nextInt();
         System.out.print("Введите N пакетиков с едой:");
-        int takeFood = sc.nextInt();
-        if (evenUnevenCats == 1) {
+        int newFood = sc.nextInt();
+        if (newFood < 0 || newFood > 7) {
+            System.out.println("Введите число не более 7");
+        } else if (evenUnevenCats == 1) {
             for (int i = 0; i < catsFood.length; i++) {
                 if (i % 2 == 0) {
-                    catsFood[i] = takeFood;
+                    catsFood[i] = newFood;
                 }
             }
         }
         if (evenUnevenCats == 2) {
             for (int i = 0; i < catsFood.length; i++) {
                 if (i % 2 != 0) {
-                    catsFood[i] = takeFood;
+                    catsFood[i] = newFood;
                 }
             }
-        }
+        } else System.out.println("Неверная команда");
     }
 
     public static int wrongEnter() {
