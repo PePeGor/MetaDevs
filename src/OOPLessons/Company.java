@@ -1,32 +1,55 @@
 package OOPLessons;
 
-public class Company {
-    private Specialist[] specialists;
+public class Company implements IdealCompany{
+    private Employee[] specialists;
     private String name;
 
     public Company(String name, int amount) {
         this.name = name;
-        this.specialists = new Specialist[amount];
+        this.specialists = new Employee[amount];
     }
 
-    public Specialist[] getSpecialists() {
+    public Employee[] getSpecialists() {
         return specialists;
     }
 
-    public void hire(Specialist specialist) {
+
+    /*public void hire(Employee specialist) {
+        Employee[] checkArray = new Employee[specialists.length+1];
         for (int i = 0; i < specialists.length; i++) {
             if (specialists[i] == null) {
                 specialists[i] = specialist;
                 return;
             }
-            if (specialists.length > 0  && specialists[i] != null) {
-                return;
+        checkArray[i] = specialists[i];
+        }
+        checkArray[specialists.length] = specialist;
+        specialists = checkArray;
+    }*/
+
+    /*public void fire(Employee specialist) {
+        Employee[] newArray = new Employee[specialists.length - 1];
+        for (int i = 0, j = 0; i < specialists.length; i++) {
+            if (specialists[i] != specialist) {
+                newArray[j++] = specialists[i];
             }
+        }
+        specialists = newArray;
+    }*/
+
+    public void printCompany() {
+        for (int i = 0; i < specialists.length; i++) {
+            /*System.out.print(specialists[i].getNameOfPerson());
+            System.out.print(" " + specialists[i].getAgeOfPerson() + " ");
+            System.out.printf("%d", specialists[i].getSalary());
+            System.out.println();*/
+            specialists[i].whoAreYou();
         }
     }
 
-    public void fire(Specialist specialist) {
-        Specialist[] newArray = new Specialist[specialists.length - 1];
+    @Override
+    public void fire(Employee specialist) {
+        Employee[] newArray = new Employee[specialists.length - 1];
         for (int i = 0, j = 0; i < specialists.length; i++) {
             if (specialists[i] != specialist) {
                 newArray[j++] = specialists[i];
@@ -35,12 +58,17 @@ public class Company {
         specialists = newArray;
     }
 
-    public void printCompany() {
+    @Override
+    public void hire(Employee specialist) {
+        Employee[] checkArray = new Employee[specialists.length+1];
         for (int i = 0; i < specialists.length; i++) {
-            System.out.print(specialists[i].getNameOfPerson());
-            System.out.print(" " + specialists[i].getAgeOfPerson() + " ");
-            System.out.printf("%d", specialists[i].getSalary());
-            System.out.println();
+            if (specialists[i] == null) {
+                specialists[i] = specialist;
+                return;
+            }
+            checkArray[i] = specialists[i];
         }
+        checkArray[specialists.length] = specialist;
+        specialists = checkArray;
     }
 }

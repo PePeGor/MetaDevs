@@ -1,18 +1,17 @@
 package OOPLessons;
 
-public class Specialist {
+public class Specialist implements Employee {
 
-   private String nameOfPerson;
-   private int salary;
-   private int ageOfPerson;
-   private String workingCompany;
+    private String nameOfPerson;
+    private int salary;
+    private int ageOfPerson;
+    private String workingCompany;
 
     public Specialist(String nameOfPerson, int ageOfPerson, int salary) {
         this.nameOfPerson = nameOfPerson;
         this.ageOfPerson = ageOfPerson;
         this.salary = salary;
     }
-
 
     //region getters/setters
     public String getNameOfPerson() {
@@ -65,7 +64,11 @@ public class Specialist {
                 "nameOfPerson='" + nameOfPerson + '\'' +
                 ", salary=" + salary +
                 ", ageOfPerson=" + ageOfPerson +
-                ", workingCompany='" + workingCompany + '\'' +
                 '}';
+    }
+
+    @Override
+    public void whoAreYou() {
+        System.out.println("I'm specialist.");
     }
 }

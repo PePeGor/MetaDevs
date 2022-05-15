@@ -14,28 +14,30 @@ public class HumanWorker {
         System.out.println(Specialist.salaryComparAge(31, 30000));
 
         Company metodoMagya = new Company("OOO YOBA", 4);
-        Specialist ivan = new Specialist("Ivan", 31, 15000);
+
+        Employee ivan = new Manager("Ivan", 31, 15000);
         metodoMagya.hire(ivan);
         System.out.println(Arrays.toString(metodoMagya.getSpecialists()));
-        Specialist lalka = new Specialist("Lalka", 18, 35000);
+
+        Employee lalka = new Specialist("Lalka", 18, 35000);
         metodoMagya.hire(lalka);
         System.out.println(Arrays.toString(metodoMagya.getSpecialists()));
-        Specialist chad = new Specialist("Chad", 35, 60000);
+
+        Employee chad = new Manager("Chad", 35, 60000);
         metodoMagya.hire(chad);
         System.out.println(Arrays.toString(metodoMagya.getSpecialists()));
-        Specialist gigaChad = new  Specialist("GigaChad", 32, 100000);
+
+        Employee gigaChad = new Specialist("GigaChad", 32, 100000);
         metodoMagya.hire(gigaChad);
         System.out.println(Arrays.toString(metodoMagya.getSpecialists()));
 
-        metodoMagya.printCompany();
-        Specialist pepe = new  Specialist("Pepe", 32, 100000);
+        Employee pepe = new Manager("Pepe", 32, 100000);
         metodoMagya.hire(pepe);
         System.out.println(Arrays.toString(metodoMagya.getSpecialists()));
 
-       metodoMagya.fire(ivan);
-
-        System.out.println("\nArray with a remote worker\n");
         metodoMagya.printCompany();
+
+        metodoMagya.fire(pepe);
 
         Specialist.salaryValidate();
     }
