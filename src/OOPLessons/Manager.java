@@ -1,6 +1,6 @@
 package OOPLessons;
 
-public class Manager implements Employee{
+public class Manager implements Employee {
 
     //region getters/setters
     public String getNameOfPerson() {
@@ -40,7 +40,10 @@ public class Manager implements Employee{
     }
 
     @Override
-    public void whoAreYou() {
-        System.out.println("I'm manager");
+    public void printPersonalInfo() {
+        System.out.println("I'm Manager");
+        System.out.print(this.nameOfPerson);
+        System.out.print(" " + this.ageOfPerson + " ");
+        System.out.printf("%d", this.salary);
     }
 }

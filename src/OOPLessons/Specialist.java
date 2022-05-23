@@ -59,6 +59,14 @@ public class Specialist implements Employee {
     }
 
     @Override
+    public void printPersonalInfo() {
+        System.out.println("I'm Specialist");
+        System.out.print(this.nameOfPerson);
+        System.out.print(" " + this.ageOfPerson + " ");
+        System.out.printf("%d", this.salary);
+    }
+
+    @Override
     public String toString() {
         return "Specialist{" +
                 "nameOfPerson='" + nameOfPerson + '\'' +
@@ -67,8 +75,4 @@ public class Specialist implements Employee {
                 '}';
     }
 
-    @Override
-    public void whoAreYou() {
-        System.out.println("I'm specialist.");
-    }
 }

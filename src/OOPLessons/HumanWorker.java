@@ -1,7 +1,6 @@
 package OOPLessons;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 
 public class HumanWorker {
@@ -35,19 +34,14 @@ public class HumanWorker {
         metodoMagya.hire(pepe);
         System.out.println(Arrays.toString(metodoMagya.getSpecialists()));
 
-        metodoMagya.printCompany();
+        metodoMagya.printEmployees();
 
         metodoMagya.fire(pepe);
 
-        Specialist.salaryValidate();
-    }
+        metodoMagya.printEmployees();
 
-    public static int inputCheck(Scanner userInput) {
-        while (!userInput.hasNextInt()) {
-            System.out.println("It's not an integer, try again");
-            userInput.nextInt();
-        }
-        return userInput.nextInt();
+
+        //  Specialist.salaryValidate();
     }
 
 }
