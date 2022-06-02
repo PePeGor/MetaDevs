@@ -1,4 +1,4 @@
-package OOPLessons;
+package ru.metadevs.ivan.OOPLessons;
 
 import java.util.Arrays;
 
@@ -41,7 +41,9 @@ public class HumanWorker {
         metodoMagya.printEmployees();
 
 
-        //  Specialist.salaryValidate();
+        Specialist.salaryValidate();
+
+        pepe.needCoffee();
     }
 
 }

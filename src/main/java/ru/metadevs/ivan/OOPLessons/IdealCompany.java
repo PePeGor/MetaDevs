@@ -1,4 +1,4 @@
-package OOPLessons;
+package ru.metadevs.ivan.OOPLessons;
 
 public interface IdealCompany {
 

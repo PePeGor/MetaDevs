@@ -1,4 +1,4 @@
-package OOPLessons;
+package ru.metadevs.ivan.OOPLessons;
 
 public class Specialist implements Employee {
 
@@ -53,7 +53,7 @@ public class Specialist implements Employee {
 
     public static void salaryValidate() throws Exception {
         boolean validate = salaryComparAge(31, 30000);
-        if (validate == false) {
+        if (!validate) {
             throw new Exception("Incorrect data");
         }
     }
