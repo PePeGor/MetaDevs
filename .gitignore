@@ -1,3 +1,5 @@
 .idea
 out
-MetaDevs_Develop.iml
+*.iml
+.gradle
+build
