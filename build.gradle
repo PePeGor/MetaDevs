@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id "me.champeau.jmh" version "0.6.6"
 }
-
 group 'ru.metadevs.ivan'
 version '1.0-SNAPSHOT'
 

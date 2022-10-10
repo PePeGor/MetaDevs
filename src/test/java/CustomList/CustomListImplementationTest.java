@@ -59,7 +59,7 @@ class CustomListImplementationTest {
     }
 
     @Test
-    void isEmpty() {
+    void isTheArrayIsEmpty() {
         CustomListImplementation<Integer> myList = new CustomListImplementation<>();
 
         assertThat(myList.isEmpty()).isEqualTo(true);

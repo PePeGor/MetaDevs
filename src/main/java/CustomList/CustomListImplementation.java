@@ -2,11 +2,12 @@ package CustomList;
 
 import java.util.*;
 
-public class CustomListImplementation<T> implements List<T> {
+
+public class CustomListImplementation<T> implements List<T>{
 
     private T[] array;
     private int size;
-    public final static int DEFAULT_CAPACITY = 10;
+    public final static int DEFAULT_CAPACITY = 20;
 
     public CustomListImplementation() {
         this.array = (T[]) new Object[DEFAULT_CAPACITY];
@@ -18,7 +19,20 @@ public class CustomListImplementation<T> implements List<T> {
         this.size = array.length;
     }
 
-    public CustomListImplementation(int iterations) {
+
+    private T[] copyOf(T[] array, int length) {
+        T[] newArray = (T[]) new Object[length];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        return newArray;
+    }
+
+    private void increaseCapacity() {
+        if (size == array.length) {
+            int newLength = (int) (array.length * 1.5);
+            array = copyOf(array, newLength);
+        }
     }
 
     @Override
@@ -26,6 +40,7 @@ public class CustomListImplementation<T> implements List<T> {
         if (index > size) {
             throw new IndexOutOfBoundsException("Element is out of range");
         }
+        increaseCapacity();
         for (int i = size; i > index; i--) {
             array[i] = array[i - 1];
         }
@@ -59,7 +74,7 @@ public class CustomListImplementation<T> implements List<T> {
             subArray[s] = array[i];
             s++;
         }
-        return new <T>CustomListImplementation(subArray);
+        return new <T>CustomListImplementation<T>(subArray);
 
     }
 
@@ -70,6 +85,7 @@ public class CustomListImplementation<T> implements List<T> {
 
     @Override
     public boolean add(T element) {
+        increaseCapacity();
         array[size] = element;
         size++;
         return true;
@@ -99,6 +115,31 @@ public class CustomListImplementation<T> implements List<T> {
             }
         }
         return false;
+    }
+
+    public void displayList() {
+        for (int i = 0; i < size; i++) {
+            System.out.print(array[i] + " ");
+            System.out.print("");
+        }
+    }
+
+    public void selectionSort() {
+        int minElement;
+        int comparedElem;
+        int i;
+        T tempElement;
+        for (i = 0; i < size - 1; i++) {
+            minElement = i;
+            for (comparedElem = i + 1; comparedElem < size; comparedElem++) {
+                if ((int) array[minElement] > (int) (array[comparedElem])) {
+                    minElement = comparedElem;
+                }
+            }
+            tempElement = array[i];
+            array[i] = array[minElement];
+            array[minElement] = tempElement;
+        }
     }
 
     //region another methods to implement
